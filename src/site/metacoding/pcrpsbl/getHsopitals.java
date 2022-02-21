@@ -10,7 +10,7 @@ public class getHsopitals {
     public static List<Hospital> get() {
 
         List<Item> result = dtoDownload.getDto();
-        List<Hospital> Hospitals = new ArrayList<>();
+        List<Hospital> hospitals = new ArrayList<>();
 
         for (int i = 0; i < result.size(); i++) {
             Hospital h = new Hospital(
@@ -30,8 +30,8 @@ public class getHsopitals {
                     result.get(i).getYadmNm(),
                     result.get(i).getYkihoEnc());
 
-            Hospitals.add(h);
+            hospitals.add(h);
         }
-        return Hospitals;
+        return hospitals;
     }
 }
