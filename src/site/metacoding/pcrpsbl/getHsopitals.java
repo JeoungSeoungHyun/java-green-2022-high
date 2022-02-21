@@ -7,13 +7,13 @@ import site.metacoding.pcrpsbl.pcrPsblDto.Response.Body.Items.Item;
 
 public class getHsopitals {
 
-    public static List<hospital> get() {
+    public static List<Hospital> get() {
 
         List<Item> result = dtoDownload.getDto();
-        List<hospital> hospitals = new ArrayList<>();
+        List<Hospital> Hospitals = new ArrayList<>();
 
         for (int i = 0; i < result.size(); i++) {
-            hospital h = new hospital(
+            Hospital h = new Hospital(
                     result.get(i).getAddr(),
                     result.get(i).getMgtStaDd(),
                     result.get(i).getPcrPsblYn(),
@@ -30,8 +30,8 @@ public class getHsopitals {
                     result.get(i).getYadmNm(),
                     result.get(i).getYkihoEnc());
 
-            hospitals.add(h);
+            Hospitals.add(h);
         }
-        return hospitals;
+        return Hospitals;
     }
 }

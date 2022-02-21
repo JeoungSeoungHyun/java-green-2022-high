@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class hospital {
+public class Hospital {
     private String addr;
     private String mgtStaDd;
     private String pcrPsblYn;

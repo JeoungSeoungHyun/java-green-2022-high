@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.List;
 
-public class insertDB {
+public class InsertDB {
 
-    private List<hospital> hospitals = getHsopitals.get();
+    private List<Hospital> Hospitals = getHsopitals.get();
     // System.out.println("Dto다운 병원 개수 :" + hospitals.size());
 
     public void insertData() {
@@ -23,23 +23,23 @@ public class insertDB {
             String sql = "INSERT INTO HOSPITAL(addr,mgtStaDd,pcrPsblYn,ratPsblYn,recuClCd,rprtWorpClicFndtTgtYn,sgguCdNm,sidoCdNm,telno,XPos,XPosWgs84,YPos,YPosWgs84,yadmNm,ykihoEnc) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
-            for (int i = 0; i < hospitals.size(); i++) {
+            for (int i = 0; i < Hospitals.size(); i++) {
 
-                pstmt.setString(1, hospitals.get(i).getAddr());
-                pstmt.setString(2, hospitals.get(i).getMgtStaDd());
-                pstmt.setString(3, hospitals.get(i).getPcrPsblYn());
-                pstmt.setString(4, hospitals.get(i).getRatPsblYn());
-                pstmt.setString(5, hospitals.get(i).getRecuClCd());
-                pstmt.setString(6, hospitals.get(i).getRprtWorpClicFndtTgtYn());
-                pstmt.setString(7, hospitals.get(i).getSgguCdNm());
-                pstmt.setString(8, hospitals.get(i).getSidoCdNm());
-                pstmt.setString(9, hospitals.get(i).getTelno());
-                pstmt.setString(10, hospitals.get(i).getXPos());
-                pstmt.setString(11, hospitals.get(i).getXPosWgs84());
-                pstmt.setString(12, hospitals.get(i).getYPos());
-                pstmt.setString(13, hospitals.get(i).getYPosWgs84());
-                pstmt.setString(14, hospitals.get(i).getYadmNm());
-                pstmt.setString(15, hospitals.get(i).getYkihoEnc());
+                pstmt.setString(1, Hospitals.get(i).getAddr());
+                pstmt.setString(2, Hospitals.get(i).getMgtStaDd());
+                pstmt.setString(3, Hospitals.get(i).getPcrPsblYn());
+                pstmt.setString(4, Hospitals.get(i).getRatPsblYn());
+                pstmt.setString(5, Hospitals.get(i).getRecuClCd());
+                pstmt.setString(6, Hospitals.get(i).getRprtWorpClicFndtTgtYn());
+                pstmt.setString(7, Hospitals.get(i).getSgguCdNm());
+                pstmt.setString(8, Hospitals.get(i).getSidoCdNm());
+                pstmt.setString(9, Hospitals.get(i).getTelno());
+                pstmt.setString(10, Hospitals.get(i).getXPos());
+                pstmt.setString(11, Hospitals.get(i).getXPosWgs84());
+                pstmt.setString(12, Hospitals.get(i).getYPos());
+                pstmt.setString(13, Hospitals.get(i).getYPosWgs84());
+                pstmt.setString(14, Hospitals.get(i).getYadmNm());
+                pstmt.setString(15, Hospitals.get(i).getYkihoEnc());
 
                 result = result + pstmt.executeUpdate(); // INSERT,UPDATE,DELETE시 사용
             }
